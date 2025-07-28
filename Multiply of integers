@@ -1,1 +1,21 @@
 
+#include <stdio.h>
+
+int main() {
+    int a, b, mul;
+
+    // Ask user to enter two integers
+    printf("Enter first number: ");
+    scanf("%d", &a);
+
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    // Calculate mul
+    sum = a * b;
+
+    // Print result
+    printf("mul = %d\n", mul);
+
+    return 0;
+}
