@@ -1,1 +1,33 @@
+#include <stdio.h>
 
+int main() {
+    int row, column;
+
+    printf("Enter Row size: ");
+    scanf("%d", &row);  // fixed
+
+    printf("Enter Column size: ");
+    scanf("%d", &column);
+
+    int a[row][column];
+    int i, j;
+
+    // Input values
+    for(i = 0; i < row; i++) {
+        for(j = 0; j < column; j++) {
+            printf("Enter Value at [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Print matrix
+    printf("Matrix is:\n");
+    for(i = 0; i < row; i++) {
+        for(j = 0; j < column; j++) {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
