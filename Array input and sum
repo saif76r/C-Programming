@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n];  // Variable-length array (C99 and later)
+
+    printf("Enter %d integers:", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    printf("Array elements:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d\n", arr[i]);
+    }
+
+    printf("Sum of array elements: %d\n", sum);
+
+    return 0;
+}
+
