@@ -1,1 +1,42 @@
 
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float length, width, radius, base1, base2, height;
+    float side1, side2, side3, area, perimeter;
+
+    // Rectangle
+    length = 5;
+    width = 3;
+    area = length * width;
+    perimeter = 2 * (length + width);
+    printf("Rectangle -> Area: %.2f, Perimeter: %.2f\n", area, perimeter);
+
+    // Circle
+    radius = 4;
+    area = 3.1416 * radius * radius;
+    perimeter = 2 * 3.1416 * radius;
+    printf("Circle -> Area: %.2f, Circumference: %.2f\n", area, perimeter);
+
+    // Triangle
+    side1 = 3;
+    side2 = 4;
+    side3 = 5;
+    perimeter = side1 + side2 + side3;
+    float s = perimeter / 2;
+    area = sqrt(s * (s - side1) * (s - side2) * (s - side3));  // Heron's formula
+    printf("Triangle -> Area: %.2f, Perimeter: %.2f\n", area, perimeter);
+
+    // Trapezium
+    base1 = 6;
+    base2 = 4;
+    height = 3;
+    side1 = 5;
+    side2 = 5;
+    area = 0.5 * (base1 + base2) * height;
+    perimeter = base1 + base2 + side1 + side2;
+    printf("Trapezium -> Area: %.2f, Perimeter: %.2f\n", area, perimeter);
+
+    return 0;
+}
