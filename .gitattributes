@@ -1,2 +1,75 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+#include <stdio.h>
+
+int main() {
+    char subjectNames[5][100]; // Array to hold 5 subject names
+    int marks[5];
+    float credits[5];
+    float gradePoints[5];
+    const char* gradeLetters[5];
+    float totalWeightedPoints = 0.0;
+    float totalCredits = 0.0;
+
+    printf("Enter subject name, marks and credit for 5 subjects:\n");
+
+    for (int i = 0; i < 5; i++) {
+        printf("\nEnter name of Subject %d: ", i + 1);
+        scanf(" %[^\n]", subjectNames[i]); // Reads full line including spaces
+
+        printf("Enter marks for %s: ", subjectNames[i]);
+        scanf("%d", &marks[i]);
+
+        printf("Enter credit (e.g., 3.0, 1.5) for %s: ", subjectNames[i]);
+        scanf("%f", &credits[i]);
+
+        // Inline grade point and letter assignment
+        if (marks[i] >= 80 && marks[i] <= 100) {
+            gradePoints[i] = 4.00;
+            gradeLetters[i] = "A+";
+        } else if (marks[i] >= 75) {
+            gradePoints[i] = 3.75;
+            gradeLetters[i] = "A";
+        } else if (marks[i] >= 70) {
+            gradePoints[i] = 3.50;
+            gradeLetters[i] = "A-";
+        } else if (marks[i] >= 65) {
+            gradePoints[i] = 3.25;
+            gradeLetters[i] = "B+";
+        } else if (marks[i] >= 60) {
+            gradePoints[i] = 3.00;
+            gradeLetters[i] = "B";
+        } else if (marks[i] >= 55) {
+            gradePoints[i] = 2.75;
+            gradeLetters[i] = "B-";
+        } else if (marks[i] >= 50) {
+            gradePoints[i] = 2.50;
+            gradeLetters[i] = "C+";
+        } else if (marks[i] >= 45) {
+            gradePoints[i] = 2.25;
+            gradeLetters[i] = "C";
+        } else if (marks[i] >= 40) {
+            gradePoints[i] = 2.00;
+            gradeLetters[i] = "D";
+        } else {
+            gradePoints[i] = 0.00;
+            gradeLetters[i] = "F";
+        }
+
+        totalWeightedPoints += gradePoints[i] * credits[i];
+        totalCredits += credits[i];
+    }
+
+    printf("\n---------- Result Summary ----------\n");
+    printf("Subject Name\tMarks\tCredit\tGrade\tGrade Point\n");
+    printf("-----------------------------------------------------\n");
+
+    for (int i = 0; i < 5; i++) {
+        printf("%-13s\t%d\t%.2f\t%s\t%.2f\n",
+               subjectNames[i], marks[i], credits[i], gradeLetters[i], gradePoints[i]);
+    }
+
+    float cgpa = totalWeightedPoints / totalCredits;
+    printf("\nTotal CGPA (Weighted): %.2f\n", cgpa);
+
+    return 0;
+}
