@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter how many numbers: ");
+    scanf("%d", &n);
+
+    int arr[n];  // Array to store the numbers
+
+    printf("Enter %d numbers:\n", n);
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];  // Add to sum
+    }
+
+    printf("Sum = %d\n", sum);
+
+    return 0;
+}
+
