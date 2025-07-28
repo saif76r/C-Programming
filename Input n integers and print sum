@@ -1,12 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    int n, a, sum = 0;
+    int n, a, i,sum = 0;
 
     printf("Enter positive integer: ");
     scanf("%d", &n);
 
-    printf("Enter %d numbers:\n", n);
     for (i = 0; i < n; i++) {
         scanf("%d", &a);
         sum += a;
