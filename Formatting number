@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int A;
+    scanf("%d", &A);
+
+    // Create an array to hold the formatted string
+    char result[20];
+    int len = 0;
+    int count = 0;
+
+    // Special case for 0
+    if (A == 0) {
+        printf("0\n");
+        return 0;
+    }
+
+    // Fill result array from the back
+    while (A > 0) {
+        if (count == 3) {
+            result[len++] = ',';
+            count = 0;
+        }
+        result[len++] = (A % 10) + '0';
+        A /= 10;
+        count++;
+    }
+
+    // Print the result in reverse
+    for (int i = len - 1; i >= 0; i--) {
+        putchar(result[i]);
+    }
+    putchar('\n');
+
+    return 0;
+}
