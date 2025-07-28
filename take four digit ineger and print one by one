@@ -1,1 +1,25 @@
+#include <stdio.h>
 
+int main() {
+    int num;
+
+    printf("Enter a 4-digit number: ");
+    scanf("%d", &num);
+
+    if (num < 1000 || num > 9999) {
+        printf("Please enter a valid 4-digit number.\n");
+        return 0;
+    }
+
+    int thousands = num / 1000;          // First digit
+    int hundreds = (num / 100) % 10;     // Second digit
+    int tens = (num / 10) % 10;          // Third digit
+    int units = num % 10;                // Fourth digit
+
+    printf("%d\n", thousands);
+    printf("%d\n", hundreds);
+    printf("%d\n", tens);
+    printf("%d\n", units);
+
+    return 0;
+}
