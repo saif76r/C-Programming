@@ -1,1 +1,71 @@
 
+#include <stdio.h>
+#define PI 3.141592653589793
+
+int main() {
+    int choice;
+    printf("Choose the shape to compute:\n");
+    printf("1. Rectangle\n2. Circle\n3. Trapezium\n4. Triangle\n");
+    printf("Enter your choice (1‑4): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1: {
+            double length, width, area, perimeter;
+            printf("\nRectangle:\nEnter length: ");
+            scanf("%lf", &length);
+            printf("Enter width: ");
+            scanf("%lf", &width);
+            area = length * width;
+            perimeter = 2 * (length + width);
+            printf("Area = %.2f\nPerimeter = %.2f\n", area, perimeter);
+            break;
+        }
+        case 2: {
+            double radius, area, circumference;
+            printf("\nCircle:\nEnter radius: ");
+            scanf("%lf", &radius);
+            area = PI * radius * radius;
+            circumference = 2 * PI * radius;
+            printf("Area = %.2f\nCircumference = %.2f\n", area, circumference);
+            break;
+        }
+        case 3: {
+            double a, b, height, side1, side2, area, perimeter;
+            printf("\nTrapezium (trapezoid):\nEnter length of parallel side a: ");
+            scanf("%lf", &a);
+            printf("Enter length of parallel side b: ");
+            scanf("%lf", &b);
+            printf("Enter height (distance between parallels): ");
+            scanf("%lf", &height);
+            // Optional: if side lengths of non-parallel sides unknown:
+            printf("Enter length of side 1 (non-parallel): ");
+            scanf("%lf", &side1);
+            printf("Enter length of side 2 (non-parallel): ");
+            scanf("%lf", &side2);
+            area = (a + b) * height / 2;
+            perimeter = a + b + side1 + side2;
+            printf("Area = %.2f\nPerimeter = %.2f\n", area, perimeter);
+            break;
+        }
+        case 4: {
+            double side1, side2, side3, area, perimeter;
+            printf("\nTriangle:\nEnter side 1: ");
+            scanf("%lf", &side1);
+            printf("Enter side 2: ");
+            scanf("%lf", &side2);
+            printf("Enter side 3: ");
+            scanf("%lf", &side3);
+            perimeter = side1 + side2 + side3;
+            // Heron's formula
+            double s = perimeter / 2;
+            area = sqrt(s * (s - side1) * (s - side2) * (s - side3));
+            printf("Area = %.2f\nPerimeter = %.2f\n", area, perimeter);
+            break;
+        }
+        default:
+            printf("Invalid choice. Please enter 1‑4.\n");
+    }
+
+    return 0;
+}
