@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter a 3-digit number: ");
+    scanf("%d", &num);
+
+    if (num < 100 || num > 999) {
+        printf("Please enter a valid 3-digit number.\n");
+        return 0;
+    }
+
+    int hundreds = num / 100;           // First digit
+    int tens = (num / 10) % 10;         // Second digit
+    int units = num % 10;                // Third digit
+
+    printf("Digits:\n");
+    printf("%d\n", hundreds);
+    printf("%d\n", tens);
+    printf("%d\n", units);
+
+    int sum = hundreds + tens + units;
+    printf("Sum of digits: %d\n", sum);
+
+    return 0;
+}
+
