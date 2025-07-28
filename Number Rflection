@@ -1,1 +1,14 @@
+#include <stdio.h>
 
+int main() {
+    int num, i;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Reflection: ");
+    for (i = num; i > 0; i /= 10) {
+        printf("%d", i % 10);
+    }
+
+    return 0;
+}
