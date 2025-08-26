@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   int i, al=0, v=0, sp=0, l=0; // al=alphabet, v=vowel, sp= special character, l=letter.
+   char a[50];
+   
+   fgets(a,sizeof(a),stdin);
+   a[strcspn(a , "\n")] = '\0';   
+   
+   for(i=0 ; a[i] != '\0'; i++){   
+       char ch = a[i];
+       
+       if(ch >= 'A' && ch<='Z'){
+           l++;
+           al++;
+           if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U'){
+               v++;
+           }
+       }
+        if(ch >= 'a' && ch<='z'){
+           l++;
+           al++;
+           if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+               v++;
+           }
+       }
+       else {
+           sp++;
+       }
+   }
+
+   printf("Alphabet = %d\n", al);
+   printf("Vowel = %d\n", v);
+   printf("Special = %d\n", sp);
+
+   return 0;
+}
