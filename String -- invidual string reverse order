@@ -6,8 +6,7 @@ int main() {
     int i;
 
     printf("Enter a string: ");
-    gets(str);  // ⚠ Use fgets() in real code, gets() is unsafe
-
+   fgets(str,sizeof(str),stdin); 
     int len = strlen(str);
 
     printf("Characters in reverse order:\n");
