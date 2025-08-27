@@ -6,12 +6,12 @@ int main() {
     int i = 0, j = 0;
 
     printf("Enter first string: ");
-    fgets(a, sizeof(a), stdin);
-    if(a[strlen(a)-1] == '\n') a[strlen(a)-1] = '\0'; // remove newline
+    scanf("%s",&a);
+   
 
     printf("Enter second string: ");
-    fgets(b, sizeof(b), stdin);
-    if(b[strlen(b)-1] == '\n') b[strlen(b)-1] = '\0'; // remove newline
+    scanf("%s",&b);
+    
 
     // Copy first string
     while(a[i] != '\0') {
