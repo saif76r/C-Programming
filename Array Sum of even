@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int a[100], n, i, sum = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements: ", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    for(i = 0; i < n; i++) {
+        if(a[i] % 2 == 0) {   // check if even
+            sum += a[i];       // add to sum
+        }
+    }
+
+    printf("Sum of even elements: %d\n", sum);
+
+    return 0;
+}
