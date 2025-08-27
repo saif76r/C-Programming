@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    char a[100];
+    int i, vowels = 0, consonants = 0;
+
+    printf("Enter a string: ");
+    fgets(a, sizeof(a), stdin);
+
+    for(i = 0; a[i] != '\0' && a[i] != '\n'; i++) {
+        char ch = a[i];
+
+        // check if character is a letter
+        if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+            // check vowels
+            if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||
+               ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+
+    printf("Vowels: %d\n", vowels);
+    printf("Consonants: %d\n", consonants);
+
+    return 0;
+}
