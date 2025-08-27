@@ -1,0 +1,26 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<string.h>
+int main() {
+char a[100], b[100];
+
+int i,len1,len2;
+
+fgets(a,sizeof(a),stdin);
+fgets(b,sizeof(b),stdin);
+
+a[strcspn(a , "\n")] = '\0';
+b[strcspn(b ,"\n")] = '\0';
+
+len1=strlen(a);
+len2=strlen(b);
+
+if(len1>len2){
+    printf("%s",a);
+}
+if(len2>len1){
+    printf("%s",b);
+    
+}
+    return 0;
+}
