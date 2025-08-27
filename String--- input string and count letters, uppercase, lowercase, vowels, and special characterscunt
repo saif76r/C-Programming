@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+
+int main (){
+    
+    int i, l=0,upp=0,low=0,v=0,sp=0;
+    
+    char a[100];
+    
+    printf("Enter a string :");
+    fgets(a,sizeof(a),stdin);
+    
+    for(i=0; a[i] != '\0' && a[i] != '\n';i++){
+        char ch = a[i];
+        
+        if(ch >= 'A'  && ch <='Z'){
+            l++;
+            upp++;
+            
+            if(ch=='A' || ch=='E'|| ch=='I' || ch=='O' || ch =='U'){
+                v++;
+            }
+        }
+        
+        if(ch >= 'a'  && ch <='z'){
+            l++;
+            low++;
+            
+            if(ch=='a' || ch=='e'|| ch=='i' || ch=='o' || ch =='u'){
+                v++;
+            }
+        }
+        
+        if(!((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))) {
+            sp++;
+        
+        }
+    }
+    printf("Total letters: %d\n", l);
+    printf("Uppercase letters: %d\n", upp);
+    printf("Lowercase letters: %d\n", low);
+    printf("Vowels: %d\n", v);
+    printf("Special characters: %d\n", sp);
+
+}
