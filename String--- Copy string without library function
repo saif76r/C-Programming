@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    char source[100], destination[100];
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", source);  // or use scanf(" %[^\n]s", source) for spaces
+
+    // Copy each character manually
+    while (source[i] != '\0') {
+        destination[i] = source[i];
+        i++;
+    }
+
+    // Null-terminate the destination string
+    destination[i] = '\0';
+
+    printf("Copied string: %s\n", destination);
+
+    return 0;
+}
